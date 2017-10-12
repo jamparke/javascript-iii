@@ -37,6 +37,18 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
+function employeeUpdater() {
+  employees.forEach((currentItem, i) => {
+    // console.log(currentItem.firstName)
+    if (currentItem.firstName == "Lorie") {
+      // console.log(currentItem);
+      currentItem.department = 'HR'
+    } else if (currentItem.firstName == "Theo") {
+      delete employees[i]
+    }
+  });
+  return employees
+}
 
 
 
@@ -55,7 +67,17 @@ var employees = [{
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
-
+function removeDuplicates() {
+  for (var i = 0; i < workplaceAccidents.length; i++) {
+    for (var j = i + 1; j < workplaceAccidents.length; j++) {
+      if (workplaceAccidents[i] == workplaceAccidents[j]) {
+        console.log(j);
+        workplaceAccidents.splice(j, 1)
+      }    
+    }
+  }
+  return workplaceAccidents
+}
 
 
 

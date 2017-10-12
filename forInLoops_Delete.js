@@ -7,19 +7,19 @@
 
 // In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
 // }
 
-// In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
+// In this next example, we are accessing the property names themselves. Un-comment the code below, run it and look at what prints in the console.
 
 // for(var key in values) {
 //   console.log(key)
@@ -31,8 +31,14 @@
 
 // Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 
-function showValues( obj ) {
+function showValues( object ) {
   // CODE HERE
+  var string = []
+  for (var key in object) {
+    string += (object[key])
+  }
+  // console.log(string)
+  return string
 }
 
 
@@ -42,6 +48,14 @@ function showValues( obj ) {
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
 // CODE HERE
+function greaterThan10(object) {
+for (var key in object) {
+  if (object[key] > 10) {
+    object[key] = 0;
+  }
+}
+return object
+}
 
 
 
@@ -51,7 +65,12 @@ function showValues( obj ) {
 // Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
 
 // CODE HERE
-
+function double(object) {
+  for (var key in object) {
+   object[key] *= 2
+  }
+  return object
+}
 
 
 // ========================
@@ -60,7 +79,17 @@ function showValues( obj ) {
 // Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
 
 // CODE HERE
-
+function secrets(object) {
+  var myString = '';
+  for (var key in object) {
+    console.log(key.charAt(0))
+    if ((key.charAt(0) == "s" && key.charAt(1) == "h" )) {
+      
+       myString += object[key];
+    }
+  }
+  return myString
+}
 
 // ========================
 
